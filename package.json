@@ -1,5 +1,5 @@
 {
-  "name": "scrapingcheerios",
+  "name": "newsscraper",
   "version": "1.0.0",
   "description": "mongo/cheerio screen scraping",
   "main": "index.js",
@@ -8,16 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsdcanavan/scrapingcheerios.git"
+    "url": "git+https://github.com/tsdcanavan/newsscraper.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsdcanavan/scrapingcheerios/issues"
+    "url": "https://github.com/tsdcanavan/newsscraper/issues"
   },
-  "homepage": "https://github.com/tsdcanavan/scrapingcheerios#readme",
+  "homepage": "https://github.com/tsdcanavan/newsscraper#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
