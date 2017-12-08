@@ -1,4 +1,8 @@
-body { background-color: #a7e1f3 }
+body { 
+  /* background-color: #272adb;  */
+  background-image: url('../img/quickshipmetals_black-diamondplate1.jpg');
+  color: #cad4f1;
+}
 #wrapper {
   width: 960px;
   margin-left: auto;
@@ -9,7 +13,7 @@ body { background-color: #a7e1f3 }
   display: inline-block;
   overflow: auto;
   width: 60%;
-  height: 700px;
+  height: 300px;
 }
 #notes {
   float: right;
