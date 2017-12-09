@@ -22,39 +22,43 @@ $(document).on("click", "p", function() {
 
       // If there's a note in the article
       if (data.note) {
-        // Place the title of the note in the title input
         $("#titleinput").val(data.note.title);
-        // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
       }
     });
 });
 
+// reload articles
+$(document).on("click", "#scraper", function() {
+  // drop all articles and notes
+  db.Article.remove();
+  db.Note.remove();
+
+  //do a new scraping
+  $.ajax({
+    method: 'GET',
+    url: '/scrape'
+  });
+
+});
+
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
-  // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
 
-  // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
     method: "POST",
     url: "/articles/" + thisId,
     data: {
-      // Value taken from title input
       title: $("#titleinput").val(),
-      // Value taken from note textarea
       body: $("#bodyinput").val()
     }
   })
-    // With that done
     .done(function(data) {
-      // Log the response
       console.log(data);
-      // Empty the notes section
       $("#notes").empty();
     });
 
-  // Also, remove the values entered in the input and textarea for note entry
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
